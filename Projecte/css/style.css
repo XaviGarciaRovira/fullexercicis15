@@ -1,0 +1,624 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+html{
+    font-size: 62.5%;
+    font-family: 'Averia Sans Libre';
+}
+
+body{
+    background-color: #230134;   
+}
+
+body.menu-open {
+    overflow-y: hidden;
+}
+
+body::-webkit-scrollbar{
+    display: none;
+}
+
+header{
+    height: 10rem;
+    display: flex;
+    justify-content: space-between;
+    box-shadow: .5rem .5rem .5rem black;
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateY(-100%); /* Slide in from top */
+    }
+    to {
+        transform: translateY(0%); /* Slide in to original position */
+    }
+}
+
+#buscador{
+    width: 70%;
+    height: 80rem;
+    margin-top: 5rem;
+    margin-left: 15%;
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    background-color: #230134;
+    border-radius: 1rem;
+    box-shadow: 100%;
+    animation: slideIn 0.6s ease-in-out;
+}
+
+#overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Change the opacity to adjust the darkness of the background */
+    backdrop-filter: blur(5px); /* Add a blur effect to the background */
+    z-index: 999; /* Ensure the overlay is on top of other elements */
+    transition: opacity 0.6s ease-in-out;
+}
+
+/* Define the end state of the overlay */
+#overlay.hidden {
+    opacity: 0;
+    pointer-events: none; /* Make the overlay not clickable when hidden */
+}
+
+#buscador.hidden {
+    display: none;
+}
+
+#buscar{
+    width: 50rem;
+    height: 4rem;
+    text-align: center;
+    margin: 1rem 0 0 50%;
+    display: flex;
+    justify-content: center;
+    color: white;
+    background: -webkit-linear-gradient(#fc951fd5 ,#f421248c);
+    border: none;
+    border-radius: 4rem;
+    font-size: 1.5rem;
+}
+
+#buscar::placeholder{
+    color: rgba(255, 255, 255, 0.637);
+    font-size: 1.5rem;
+}
+
+#fotos{
+    width: 207%;
+}
+
+.busc {
+    height: 20rem;
+    width: 30%;
+    padding: .7rem;   
+}
+
+.busc:hover{
+    z-index: 999;
+    transform: scale(1.2);
+}
+
+
+#creueta{
+    display: flex;
+    justify-content: flex-end;
+    margin: .5rem 0 0 47%;
+    font-size: 2rem;
+    color: white;
+}
+
+h2{
+    text-transform: uppercase;
+}
+
+#logo{
+    height: 100%;
+}
+
+#menu{
+    height: 100%;
+    width: 40%;
+    font-size: 2.3rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+
+
+}
+
+#menu a{
+    
+    width: 25%;
+    height: 80%;
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color:white;
+    padding: 1rem;
+    font-family: 'Averia Sans Libre';
+
+}
+
+#menu a:hover{
+    color: black;
+    background: -webkit-linear-gradient(#fc951f,#f42125);
+}
+
+@keyframes slideLeft {
+    from {
+        transform: translateX(200%); /* Slide in from top */
+    }
+    to {
+        transform: translateX(100%); /* Slide in to original position */
+    }
+}
+
+#blocllista{
+    z-index: 999;
+    margin-left: 85%;
+    background-color: #230134; 
+
+}
+
+#blocllista.hidden {
+    opacity: 0;
+    pointer-events: none; /* Make the overlay not clickable when hidden */
+    
+}
+
+#llista{
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+    position: absolute;
+    width: 15%;
+    background-color: #230134;
+    border-bottom-left-radius: 2rem;
+    border-bottom-right-radius: 2rem;
+    /* animation: slideLeft .2s ease-in-out; */
+}
+
+#llista.hidden {
+    display: none;
+}
+
+#llista a{
+    text-decoration: none;
+    text-align: center;
+    color: white;
+    font-size: 2.3rem;
+    padding: 1rem;
+    width: 90%;
+}
+
+#llista a:hover{
+    color: black;
+    background: -webkit-linear-gradient(#fc951f,#f42125);
+    border-radius: 2rem;
+}
+
+
+
+#titolseccions{
+    font-size: 7rem;
+    color: white;
+    padding: 4rem;
+    text-align: center;
+    text-shadow: .5rem .5rem .5rem black;
+    
+}
+
+#panelprincipal{
+
+    height: 77rem;
+    background: url(../img/i.jpg);
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-position-y: -110px;
+    font-family: 'Averia Sans Libre';
+    color: white;
+
+
+}
+
+#panelprincipal h1{
+    text-transform: uppercase;
+    padding: 20rem 2rem 2rem 2rem;
+    font-size: 5rem;
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
+}
+
+#panelprincipal p{
+    text-transform: capitalize;
+    height: 63.5%;
+    padding-left: 2rem;
+    padding-right: 100rem;
+    font-size: 1.6rem;
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
+
+}
+
+.titols{
+    color: white;
+    font-size: 2.5rem;
+    padding: 2rem 0 0 2rem;
+    text-shadow: .5rem .8rem .5rem black;
+}
+
+
+.slider-container {
+    display: flex;
+    flex-direction: row;
+    margin-top: 4rem;
+    height: 20rem;
+    width: 100%;
+    box-shadow: .5rem .5rem .5rem;
+
+    
+}
+  
+.slider-container a{
+    font-size: 3rem;
+}
+
+.slider-container img {
+    width: 25%;
+    object-fit: cover;
+}
+
+.slider-container img:hover{
+    z-index: 999;
+    transform: scale(1.15);
+
+}
+
+.slider-container section{
+    display: flex;
+    overflow-y: visible;
+    width: 100%;
+}
+
+#section3_2, #section3_3, #section4_2, #section4_3 {
+display: none;
+
+}
+
+#left,#right,#left2,#right2,#left3,#right3,#left4,#right4{
+    color: white;
+    display: flex;
+    align-items: center;
+    padding: 0 2rem;
+    background-color: rgba(0, 0, 0, 0.281);
+}
+  
+footer{
+    padding: 2rem;
+    color: white;
+    font-size: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+}
+
+/* Log In */
+
+#link{
+    text-align: center;
+    color: white;
+    font-size: 1.5rem;
+    padding-bottom: 3rem;
+}
+
+
+/* Register */
+
+#register{
+    height: 60rem;
+    width: 100%;
+    background: -webkit-linear-gradient(#fc951fd5 ,#f421248c);
+}
+
+#inputs{
+    margin: 2rem auto;
+    height: 90%;
+    width: 40%;
+    background-color: #230134;
+    border-radius: 3rem;
+    /* padding-top: 10rem; */
+}
+
+#titol{
+    color: white;
+    padding: 1rem 0 5rem 0;
+    font-size: 4rem;
+    display: flex;
+    justify-content: center;
+
+}
+.icons{
+    font-size: 3rem;
+    color: white;
+    padding-left: 5%;
+    text-align: center;
+}
+
+.phone{
+    font-size: 4rem;
+    padding-left: 6%;
+    padding-right: 1rem;
+}
+
+.calendari{
+    padding-right: .5rem;
+}
+
+.icons2{
+    padding-right: .8rem;
+}
+
+.icons3{
+    padding-right: 1rem;
+}
+
+#inputs input{
+    margin-left: 11%;
+    margin-bottom: 2.5rem;
+    width: 70%;
+    height: 3rem;
+    border-radius: 3rem;
+    border: none;
+    text-align: center;
+    color: white;
+    background: -webkit-linear-gradient(#fc951fd5 ,#f421248c);
+}
+
+#inputs input[type="text"]::placeholder{
+    color: white;
+}
+
+#inputs input[type="password"]::placeholder{
+    color: white;
+}
+
+#inputs #enviar{
+    margin-left: 45%;
+    background: -webkit-linear-gradient(#fc951fd5 ,#f421248c);
+    width: 6rem;
+}
+
+/* Perfil */
+
+#cap{
+    padding: 5rem;
+}
+
+.perfil{
+    color: white;
+    padding-right: 1rem;
+    font-size: 4rem;
+}
+
+#user{
+    color: white;
+    font-size: 4rem;
+}
+
+#all{
+    display: flex;
+}
+
+#seccions{
+    display: flex;
+    flex-direction: column;
+    width: 20%;
+    border-right: 2px solid black;
+    align-items: end;
+}
+
+#seccions a{
+    color: white;
+    font-family: 'Averia Sans Libre';
+    font-size: 2rem;
+    background-color: #2a013f;
+    border: none;
+    border-bottom: 2px solid black;
+    width: 15rem;
+    padding: 1rem;
+}
+
+#formulari, #cartera{
+    width: 100%;
+}
+
+#inputsperfil, #inputsperfil2{
+    margin: 2rem auto;
+    height: 90%;
+    width: 100%;
+    /* padding-top: 10rem; */
+}
+
+#inputsperfil input::placeholder, #inputsperfil2 input::placeholder{
+    color: white;
+}
+
+#inputsperfil input, #inputsperfil2 input{
+    margin-left: 6%;
+    margin-bottom: 2.5rem;
+    width: 30%;
+    height: 3rem;
+    border-radius: 3rem;
+    border: none;
+    text-align: center;
+    color: white;
+    background: -webkit-linear-gradient(#fc951fd5 ,#f421248c);
+}
+
+#inputsperfil #enviar{
+    margin-left: 45%;
+    background: -webkit-linear-gradient(#fc951fd5 ,#f421248c);
+    width: 6rem;
+}
+
+#inputsperfil2{
+    margin-left: 20%;
+}
+
+#inputsperfil2 #enviar2{
+    margin-left: 27%;
+    background: -webkit-linear-gradient(#fc951fd5 ,#f421248c);
+    width: 6rem;
+}
+
+#plan {
+    display: none;
+    width: 100%;
+    justify-content: center;
+  }
+  
+  /* Style the list */
+  .price {
+    width: 25rem;
+    list-style-type: none;
+    border: 1px solid #eee;
+    margin: 2rem;
+    padding: 0;
+    -webkit-transition: 0.3s;
+    transition: 0.3s;
+
+  }
+
+  /* Add shadows on hover */
+  .price:hover {
+    box-shadow: 0 8px 12px 0 rgba(0,0,0,0.2)
+  }
+  
+  /* Pricing header */
+  .price .header {
+    background-color: #111;
+    color: white;
+    font-size: 25px;
+  }
+  
+  /* List items */
+  .price li {
+    border-bottom: 1px solid #eee;
+    padding: 20px;
+    text-align: center;
+  }
+
+  .oferta {
+    color: white;
+    font-family: 'Averia Sans Libre';
+    font-size: 2rem;
+  }
+  
+  /* Grey list item */
+  .price .grey {
+    background-color: #eee;
+    height: 3rem;
+    font-size: 20px;
+  }
+  
+  /* The "Sign Up" button */
+  .button {
+    background-color: #111;
+    border: none;
+    color: white;
+    padding: 10px 25px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 18px;
+  }
+
+  #botogratis, #botobasic, #botopremium{
+    background-color: #111;
+    border: none;
+    color: white;
+    padding: 10px 25px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 18px;
+  }
+
+  .button:hover{
+    background: -webkit-linear-gradient(#fc951fd5 ,#f421248c);
+    color: #111;
+  }
+  
+  /* Change the width of the three columns to 100%
+  (to stack horizontally on small screens) */
+  @media only screen and (max-width: 600px) {
+    .columns {
+      width: 100%;
+    }
+  }
+
+
+/* Vistes i Preferides */
+
+.vip{
+    height: 25rem;
+    width: 24%;
+    padding: .7rem;   
+}
+
+.vip:hover{
+    z-index: 999;
+    transform: scale(1.2);
+}
+
+/* Info Peli */
+
+#info{
+    display: flex;
+    height: 75rem;
+}
+
+.infopeli{
+    color: white;
+    padding: 2rem 2rem;
+}
+
+#info2{
+    width: 50%;
+}
+
+#info2 img{
+    width: 90%;
+    padding: 5rem;
+}
+
+#infotext{
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    height: 100%;
+    font-size: 2rem;
+    padding: 13rem 2rem;
+}
+
+#botons button{
+    height: 3rem;
+    width: 10rem;
+}
+
+#vist {
+    background-color: rgb(20, 20, 150);
+    border: 2px solid black;
+    margin: 2rem;
+}
+
+#preferit {
+    background-color: yellow;
+    border: 2px solid black;
+}
